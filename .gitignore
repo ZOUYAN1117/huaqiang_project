@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.om
+*.engine
+
+# Large data / outputs
+data/
+runs/
+outputs/
+results/
+checkpoints/
+
+# Jupyter
+.ipynb_checkpoints/
