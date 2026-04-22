@@ -1,0 +1,3 @@
+Module: https://tfhub.dev/google/movenet/singlepose/lightning/4
+Download Time: 2026-04-22 10:52:35.163334
+Downloader Hostname: LAPTOP-V7J07OD7 (PID:50672)
