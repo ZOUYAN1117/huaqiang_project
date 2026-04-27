@@ -26,10 +26,7 @@ dist/
 *.egg-info/
 
 # Model weights
-*.pt
 *.pth
-*.onnx
-*.om
 *.engine
 
 # Large data / outputs
