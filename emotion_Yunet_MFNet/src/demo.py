@@ -72,7 +72,7 @@ def process(frame):
 
 # ===== 主函数（摄像头）=====
 if __name__ == '__main__':
-    cap = cv.VideoCapture(0)
+    cap = cv.VideoCapture(1)   # 原为 cap = cv.VideoCapture(0)
 
     if not cap.isOpened():
         print("❌ 摄像头打不开")
