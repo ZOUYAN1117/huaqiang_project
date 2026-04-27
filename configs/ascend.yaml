@@ -1,0 +1,14 @@
+runtime:
+  platform: ascend
+
+camera:
+  source_type: camera
+  camera_id: 0
+  width: 640
+  height: 480
+  fps: 30
+  show_window: true
+  save_video: false
+
+model_backend:
+  type: om
