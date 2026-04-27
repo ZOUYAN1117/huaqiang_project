@@ -1,0 +1,7 @@
+orig_w=860
+orig_h=573
+scale=0.7441860465116279
+pad_x=0
+pad_y=107
+input_w=640
+input_h=640
