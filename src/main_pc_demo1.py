@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import sys
+import importlib.util
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -11,10 +11,23 @@ import numpy as np
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 EMOTION_SRC = PROJECT_ROOT / "emotion_Yunet_MFNet" / "src"
-sys.path.append(str(EMOTION_SRC))
 
-from facial_fer_model import FacialExpressionRecog  # noqa: E402
-from yunet import YuNet  # noqa: E402
+
+def load_attr_from_file(module_name: str, file_path: Path, attr_name: str):
+    spec = importlib.util.spec_from_file_location(module_name, file_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Cannot load module from {file_path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return getattr(module, attr_name)
+
+
+FacialExpressionRecog = load_attr_from_file(
+    "facial_fer_model",
+    EMOTION_SRC / "facial_fer_model.py",
+    "FacialExpressionRecog",
+)
+YuNet = load_attr_from_file("yunet", EMOTION_SRC / "yunet.py", "YuNet")
 
 
 POSE_MODEL_PATH = PROJECT_ROOT / "models" / "onnx" / "yolov8n-pose.onnx"
